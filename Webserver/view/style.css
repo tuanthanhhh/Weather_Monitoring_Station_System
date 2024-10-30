@@ -1,0 +1,119 @@
+*{
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+.tittle-header{
+    color: #3373AF;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.time_display{
+    color: #777;
+    font-size: 20px;
+}
+.header{
+    display: flex;
+    padding: 24px 100px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #F3F7FF;
+}
+
+.content{
+    display: flex;
+    width: 1440px;
+    padding: 24px 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    color: #424242;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.content-location{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.content-location-para{
+    color: #424242;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.form-control{
+    display: flex;
+    width: 400px;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    color: #424242;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 12px;
+    border: 1px solid #3373AF;
+    background: #FFF;
+    
+}
+
+.content-information{
+    display: flex;
+    padding: 48px 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+    align-self: stretch;
+    border-radius: 32px;
+    background: #F3F7FF;
+}
+
+.temp-humi{
+    display: flex;
+    align-items: center;
+    gap: 300px;
+    align-self: stretch;
+}
+.container-info{
+    display: flex;
+    width: 300px;
+    align-items: flex-start;
+    gap: 12px;
+}
+.temp-info{
+    display: flex;
+    width: 227px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex-shrink: 0;
+}
+.info-header{
+    margin: 0;
+    align-self: stretch;
+    color: #424242;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.info-in{
+    margin: 0;
+    align-self: stretch;
+    color: #424242;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
