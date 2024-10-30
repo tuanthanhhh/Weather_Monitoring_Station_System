@@ -1,0 +1,2 @@
+../Core/hdc1080/hdc1080.c:4:6:hdc1080_init	4
+../Core/hdc1080/hdc1080.c:37:9:hdc1080_start_measurement	1
