@@ -1,0 +1,56 @@
+Removed Pin From Net: NetName=GND Pin=C1-2
+Removed Pin From Net: NetName=5V Pin=C3-1
+Removed Pin From Net: NetName=GND Pin=C3-2
+Removed Pin From Net: NetName=5V Pin=C12-1
+Removed Pin From Net: NetName=GND Pin=D1-2
+Removed Pin From Net: NetName=GND Pin=JP1-1
+Removed Pin From Net: NetName=VCC3V3 Pin=JP1-2
+Removed Pin From Net: NetName=SCL Pin=JP1-3
+Removed Pin From Net: NetName=SDA Pin=JP1-4
+Removed Pin From Net: NetName=GND Pin=JP3-1
+Removed Pin From Net: NetName=5V Pin=JP3-2
+Removed Pin From Net: NetName=5V Pin=L3-2
+Removed Pin From Net: NetName=5V Pin=R8-1
+Removed Pin From Net: NetName=GND Pin=U1-3
+Removed Pin From Net: NetName=GND Pin=U1-3
+Removed Pin From Net: NetName=5V Pin=U1-4
+Removed Pin From Net: NetName=GND Pin=U1-5
+Removed Pin From Net: NetName=5V Pin=U4-8
+Removed Pin From Net: NetName=5V Pin=USB1-1
+Removed Pin From Net: NetName=GND Pin=USB1-4
+Removed Pin From Net: NetName=GND Pin=USB1-5
+Removed Pin From Net: NetName=GND Pin=USB1-5
+Removed Pin From Net: NetName=GND Pin=USB1-5
+Removed Member From Class: ClassName=Sheet1 Member=C1
+Removed Member From Class: ClassName=Sheet1 Member=C3
+Removed Member From Class: ClassName=Sheet1 Member=D1
+Removed Member From Class: ClassName=Sheet1 Member=JP1
+Removed Member From Class: ClassName=Sheet1 Member=L3
+Removed Member From Class: ClassName=Sheet1 Member=R2
+Removed Member From Class: ClassName=Sheet1 Member=R7
+Removed Member From Class: ClassName=Sheet1 Member=R8
+Removed Member From Class: ClassName=Sheet1 Member=U1
+Removed Member From Class: ClassName=Sheet1 Member=USB1
+Change Component Footprint: Designator=C11 Old Footprint=tu 0805 New Footprint=tu 0603
+Change Component Footprint: Designator=C12 Old Footprint=tu 0805 New Footprint=tu 0603
+Change Component Footprint: Designator=C18 Old Footprint=tu 0805 New Footprint=tu 0603
+Change Component Comment : Designator=JP3 Old Comment=ESP32 New Comment=UART
+Change Component Comment : Designator=JP4 Old Comment=JP 1x3 2.54 New Comment=RAIN
+Change Component Comment : Designator=JP5 Old Comment=JP 1x3 2.54 New Comment=WIND
+Added Component: Designator=JP?(JP 1x2 CC)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001265"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Jump Ðõn Cái 2.54MM 1x40P Cong"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=JP3-2
+Added Pin To Net: NetName=5V Pin=JP?-1
+Added Pin To Net: NetName=GND Pin=JP?-2
+Change Net Name : Old Net Name=5V New Net Name=VIN
+Added Pin To Net: NetName=5V Pin=C12-1
+Added Pin To Net: NetName=5V Pin=JP3-1
+Added Pin To Net: NetName=5V Pin=U4-8
+Added Net: Name=5V
+Added Member To Class: ClassName=Sheet1 Member=Component JP? POWER_IN
+Added Room: Name=Sheet1

@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=JP? NewDesignator=JP1
+Added Pin To Net: NetName=DIO0 Pin=RA1-12
+Added Pin To Net: NetName=DIO0 Pin=U3-13
+Added Net: Name=DIO0
+Added Room: Name=Sheet1

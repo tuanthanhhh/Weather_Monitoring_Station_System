@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.8.3">
+  <diagram name="Trang-1" id="bkPHGNZd480aELp8_WIe">
+    <mxGraphModel dx="1548" dy="817" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YCDKUIsEmASpV45-aeB9-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="600" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-3" value="&lt;b&gt;TÊN HỆ THỐNG&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C9C9C9;" vertex="1" parent="1">
+          <mxGeometry x="210" y="70" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-4" value="&lt;b&gt;THỜI GIAN THỰC&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C9C9C9;" vertex="1" parent="1">
+          <mxGeometry x="540" y="70" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-5" value="&lt;b&gt;THÔNG TIN VỀ NHIỆT ĐỘ&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="210" y="207" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-6" value="&lt;b&gt;THÔNG TIN VỀ ĐỘ ẨM&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="540" y="207" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-7" value="&lt;b&gt;THÔNG TIN VỀ LƯỢNG MƯA&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="210" y="327" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-8" value="&lt;b&gt;THÔNG TIN VỀ TỐC ĐỘ GIÓ&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="540" y="327" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-9" value="&amp;nbsp; &amp;nbsp;&lt;b&gt;Vị trí&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="210" y="150" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-13" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="160" as="sourcePoint" />
+            <mxPoint x="380" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="370" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-14" value="&amp;nbsp; &amp;nbsp;&lt;b&gt;Thông số&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="565" y="450" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="460" as="sourcePoint" />
+            <mxPoint x="710" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="700" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YCDKUIsEmASpV45-aeB9-17" value="&lt;b&gt;BIỂU ĐỒ SỐ LIỆU&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="210" y="500" width="510" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
