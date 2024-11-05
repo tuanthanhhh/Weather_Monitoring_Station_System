@@ -13,6 +13,7 @@ RM := rm -rf
 -include Core/hdc1080/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Core/Sensor/subdir.mk
 -include Core/Lora/subdir.mk
 -include objects.mk
 

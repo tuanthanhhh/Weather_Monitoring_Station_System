@@ -42,9 +42,11 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-I2C_HandleTypeDef hi2c2;
+I2C_HandleTypeDef hi2c1;
 
 SPI_HandleTypeDef hspi1;
+
+TIM_HandleTypeDef htim1;
 
 UART_HandleTypeDef huart1;
 
@@ -53,6 +55,9 @@ LoRa myLoRa;
 uint8_t LoRa_stat = 0;
 uint8_t RxBuffer[128];
 
+float wind_speed = 0;
+uint32_t wind_count = 0;
+extern check;
 int __io_putchar(int ch)
 {
   uint8_t temp = ch;
@@ -71,7 +76,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_SPI1_Init(void);
-static void MX_I2C2_Init(void);
+static void MX_I2C1_Init(void);
+static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -112,10 +118,11 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_SPI1_Init();
-  MX_I2C2_Init();
+  MX_I2C1_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-
-  hdc1080_init(&hi2c2,Temperature_Resolution_14_bit,Humidity_Resolution_14_bit);
+  HAL_TIM_Base_Start(&htim1);
+  hdc1080_init(&hi2c1,Temperature_Resolution_14_bit,Humidity_Resolution_14_bit);
   HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, 1);
   myLoRa = newLoRa();
 
@@ -145,18 +152,17 @@ int main(void)
   LoRa_startReceiving(&myLoRa);
 
   uint8_t TxBuffer[128];
-  TxBuffer[0] = 'k';
-  TxBuffer[1] = 'n';
-  TxBuffer[2] = 'G';
+  TxBuffer[0] = '2';
+  TxBuffer[1] = '5';
+  TxBuffer[2] = '&';
+  TxBuffer[3] = '6';
+  TxBuffer[4] = '7';
+
 
   uint8_t TxBuffer_1[128];
   TxBuffer_1[0] = 'H';
   TxBuffer_1[1] = 'E';
   TxBuffer_1[2] = 'L';
-
-
-
-
 
   /* USER CODE END 2 */
 
@@ -167,12 +173,24 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		hdc1080_start_measurement(&hi2c2,(float*)&temp,(uint8_t*)&humi);
+		if(check == 1)
+		{
+			wind_speed = 0.48*wind_count;
+			check = 0;
+			wind_count = 0;
+			hdc1080_start_measurement(&hi2c1,(float*)&temp,(uint8_t*)&humi);
+			snprintf(TxBuffer,sizeof(TxBuffer),"Toc do gio: %.2f, Luong mua: %d\r\nNhiet do: %.2f, Do am: %d\r\n",wind_speed,23,temp,humi);
+			HAL_UART_Transmit(&huart1, (uint8_t*)TxBuffer, strlen(TxBuffer), HAL_MAX_DELAY);
+			LoRa_transmit(&myLoRa, TxBuffer, 5, 1000);
+			printf("Toc do gio: %.2f, Luong mua: %d\n",wind_speed,23);
+			printf("Nhiet do: %.2f, Do am: %d\n",temp,humi);
+		}
 
-		printf("%.2f,%d\n",temp,humi);
+	//	printf("%.2f\n",wind_speed);
 
-		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-		HAL_Delay(500);
+
+
+		//HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
   }
   /* USER CODE END 3 */
 }
@@ -214,36 +232,36 @@ void SystemClock_Config(void)
 }
 
 /**
-  * @brief I2C2 Initialization Function
+  * @brief I2C1 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_I2C2_Init(void)
+static void MX_I2C1_Init(void)
 {
 
-  /* USER CODE BEGIN I2C2_Init 0 */
+  /* USER CODE BEGIN I2C1_Init 0 */
 
-  /* USER CODE END I2C2_Init 0 */
+  /* USER CODE END I2C1_Init 0 */
 
-  /* USER CODE BEGIN I2C2_Init 1 */
+  /* USER CODE BEGIN I2C1_Init 1 */
 
-  /* USER CODE END I2C2_Init 1 */
-  hi2c2.Instance = I2C2;
-  hi2c2.Init.ClockSpeed = 100000;
-  hi2c2.Init.DutyCycle = I2C_DUTYCYCLE_2;
-  hi2c2.Init.OwnAddress1 = 0;
-  hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c2.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c2.Init.OwnAddress2 = 0;
-  hi2c2.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c2.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c2) != HAL_OK)
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN I2C2_Init 2 */
+  /* USER CODE BEGIN I2C1_Init 2 */
 
-  /* USER CODE END I2C2_Init 2 */
+  /* USER CODE END I2C1_Init 2 */
 
 }
 
@@ -282,6 +300,52 @@ static void MX_SPI1_Init(void)
   /* USER CODE BEGIN SPI1_Init 2 */
 
   /* USER CODE END SPI1_Init 2 */
+
+}
+
+/**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 0;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 65535;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
 
 }
 
@@ -331,6 +395,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
@@ -360,9 +425,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : Wind_Pin */
+  GPIO_InitStruct.Pin = Wind_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Wind_GPIO_Port, &GPIO_InitStruct);
+
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI4_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
@@ -372,6 +446,13 @@ static void MX_GPIO_Init(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == myLoRa.DIO0_pin){
 		HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
+	}
+	if(GPIO_Pin == Wind_Pin)
+	{
+	//	HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
+		wind_count++;
+		//printf("%d\n",wind_count);
+
 	}
 }
 

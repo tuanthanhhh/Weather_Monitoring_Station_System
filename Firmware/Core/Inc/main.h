@@ -66,6 +66,9 @@ void Error_Handler(void);
 #define NSS_GPIO_Port GPIOB
 #define RST_Pin GPIO_PIN_1
 #define RST_GPIO_Port GPIOB
+#define Wind_Pin GPIO_PIN_11
+#define Wind_GPIO_Port GPIOB
+#define Wind_EXTI_IRQn EXTI15_10_IRQn
 
 /* USER CODE BEGIN Private defines */
 
