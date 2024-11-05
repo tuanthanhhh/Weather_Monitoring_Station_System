@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hệ Thống Quan Trắc Thời Tiết</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <p class="tittle-header">Hệ Thống Quan Trắc Thời Tiết</p>
+                <p class="time_display" id="datetime"></p>
+            </div>
+            <div class="content">
+                <div class="content-location">
+                    <p class="content-location-para">
+                        Chọn khu vực
+                    </p>
+                        <select class="form-control" name="location" id="idLocation" onchange="updateLocation(this.value)">
+                          <option value="1" <%= selectedLocation == '1' ? 'selected' : '' %>>Hà Nội</option>
+                          <option value="2" <%= selectedLocation == '2' ? 'selected' : '' %>>Đà Nẵng</option>
+                          <option value="3" <%= selectedLocation == '3' ? 'selected' : '' %>>TP. Hồ Chí Minh</option>
+                          <option value="4" <%= selectedLocation == '4' ? 'selected' : '' %>>Cần Thơ</option>
+                          <option value="5" <%= selectedLocation == '5' ? 'selected' : '' %>>Hải Phòng</option>
+                        </select>
+                        <script>
+                          function updateLocation(location) {
+                              document.getElementById('idLocation').disabled = true;
+                              window.location.href = 'weather?location=' + encodeURIComponent(location);
+                          }
+                          </script>
+                </div>
+                <div class="content-information">
+                    <div class="temp-humi">
+                        <div class="container-info">
+                            <div class="temp-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 4C7.67 2.75 9.75 2 12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 10.19 2.47999 8.48999 3.32999 7.01999L12 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6.82999 8.95999C6.29999 9.84999 6 10.89 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6C11.09 6 10.22 6.20001 9.45001 6.57001" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="temp-info">
+                                <p class="info-header">Nhiệt độ (Temperature)</p>
+                                <p class="info-in" id="temperature"><%= data[0].temperature %>&deg;C</p>
+                            </div>
+                        </div>
+                        <div class="container-info">
+                            <div class="temp-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15.7199 9.69002C17.7799 11.75 17.7799 15.08 15.7199 17.13C13.6599 19.19 10.3299 19.19 8.27986 17.13C6.21986 15.07 6.21986 11.74 8.27986 9.69002C10.3299 7.63002 13.6699 7.63002 15.7199 9.69002Z" stroke="#292D32" stroke-width="1.5093" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.9999 13.41L10.4099 15" stroke="#292D32" stroke-width="1.5093" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.0701 6.34003C19.2201 6.49003 19.2201 6.74003 19.0701 6.90003C18.9201 7.05003 18.6701 7.05003 18.5101 6.90003C18.3501 6.75003 18.3601 6.50003 18.5101 6.34003C18.6601 6.18003 18.9201 6.18003 19.0701 6.34003Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M19.0701 6.34003C19.2201 6.49003 19.2201 6.74003 19.0701 6.90003C18.9201 7.05003 18.6701 7.05003 18.5101 6.90003C18.3501 6.75003 18.3601 6.50003 18.5101 6.34003C18.6601 6.18003 18.9201 6.18003 19.0701 6.34003Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5.48988 19.92C5.63988 20.07 5.63988 20.32 5.48988 20.48C5.33988 20.64 5.08988 20.63 4.92988 20.48C4.77988 20.33 4.77988 20.08 4.92988 19.92C5.07988 19.76 5.33988 19.76 5.48988 19.92Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M5.48988 19.92C5.63988 20.07 5.63988 20.32 5.48988 20.48C5.33988 20.64 5.08988 20.63 4.92988 20.48C4.77988 20.33 4.77988 20.08 4.92988 19.92C5.07988 19.76 5.33988 19.76 5.48988 19.92Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M21.8799 13.13C22.0299 13.28 22.0299 13.53 21.8799 13.69C21.7299 13.84 21.4799 13.84 21.3199 13.69C21.1599 13.54 21.1699 13.29 21.3199 13.13C21.4699 12.97 21.7299 12.97 21.8799 13.13Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M21.8799 13.13C22.0299 13.28 22.0299 13.53 21.8799 13.69C21.7299 13.84 21.4799 13.84 21.3199 13.69C21.1599 13.54 21.1699 13.29 21.3199 13.13C21.4699 12.97 21.7299 12.97 21.8799 13.13Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2.67009 13.13C2.82009 13.28 2.82009 13.53 2.67009 13.69C2.52009 13.85 2.27006 13.84 2.11006 13.69C1.96006 13.54 1.96006 13.29 2.11006 13.13C2.27006 12.97 2.52009 12.97 2.67009 13.13Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M2.67009 13.13C2.82009 13.28 2.82009 13.53 2.67009 13.69C2.52009 13.85 2.27006 13.84 2.11006 13.69C1.96006 13.54 1.96006 13.29 2.11006 13.13C2.27006 12.97 2.52009 12.97 2.67009 13.13Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.0701 19.92C19.2201 20.07 19.2201 20.32 19.0701 20.48C18.9201 20.63 18.6701 20.63 18.5101 20.48C18.3501 20.33 18.3601 20.08 18.5101 19.92C18.6701 19.76 18.9201 19.76 19.0701 19.92Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M19.0701 19.92C19.2201 20.07 19.2201 20.32 19.0701 20.48C18.9201 20.63 18.6701 20.63 18.5101 20.48C18.3501 20.33 18.3601 20.08 18.5101 19.92C18.6701 19.76 18.9201 19.76 19.0701 19.92Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5.48988 6.34003C5.63988 6.49003 5.63988 6.74003 5.48988 6.90003C5.33988 7.06003 5.08988 7.05003 4.92988 6.90003C4.77988 6.75003 4.77988 6.50003 4.92988 6.34003C5.07988 6.18003 5.33988 6.18003 5.48988 6.34003Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M5.48988 6.34003C5.63988 6.49003 5.63988 6.74003 5.48988 6.90003C5.33988 7.06003 5.08988 7.05003 4.92988 6.90003C4.77988 6.75003 4.77988 6.50003 4.92988 6.34003C5.07988 6.18003 5.33988 6.18003 5.48988 6.34003Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.28 3.52003C12.43 3.67003 12.43 3.92003 12.28 4.08003C12.13 4.24003 11.88 4.23003 11.72 4.08003C11.56 3.93003 11.57 3.68003 11.72 3.52003C11.87 3.36003 12.13 3.37003 12.28 3.52003Z" stroke="#292D32" stroke-miterlimit="10"/>
+                                    <path d="M12.28 3.52003C12.43 3.67003 12.43 3.92003 12.28 4.08003C12.13 4.24003 11.88 4.23003 11.72 4.08003C11.56 3.93003 11.57 3.68003 11.72 3.52003C11.87 3.36003 12.13 3.37003 12.28 3.52003Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                            </div>
+                            <div class="temp-info">
+                                <p class="info-header">Độ ẩm (Humidity)</p>
+                                <p class="info-in" id="humidity"><%=data[0].humidity %>%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="temp-humi">
+                        <div class="container-info">
+                            <div class="temp-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12.61 2.21C12.25 1.93 11.75 1.93 11.39 2.21C9.49004 3.66 3.88003 8.39 3.91003 13.9C3.91003 18.36 7.54004 22 12.01 22C16.48 22 20.11 18.37 20.11 13.91C20.12 8.48 14.5 3.67 12.61 2.21Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10"/>
+                                </svg>
+                            </div>
+                            <div class="temp-info">
+                                <p class="info-header">Lượng mưa</p>
+                                <p class="info-in" id="rain"><%= data[0].rainfall %>mm</p>
+                            </div>
+                        </div>
+                        <div class="container-info">
+                            <div class="temp-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M2 15H18.5C20.43 15 22 16.57 22 18.5C22 20.43 20.43 22 18.5 22C16.57 22 15 20.43 15 18.5V18" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12H18.5C20.42 12 22 10.43 22 8.5C22 6.58 20.42 5 18.5 5C16.58 5 15 6.57 15 8.5V9" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 9H9.31C10.8 9 12 7.79 12 6.31C12 4.82 10.79 3.62 9.31 3.62C7.82 3.62 6.62 4.83 6.62 6.31V6.69" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="temp-info">
+                                <p class="info-header">Tốc độ gió</p>
+                                <p class="info-in" id="wind"><%=data[0].wind_speed %>m/s</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script src="js/index.js"></script>
+    </body>
+</html>
+

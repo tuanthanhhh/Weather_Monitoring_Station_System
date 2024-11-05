@@ -3,16 +3,7 @@
     <head>
         <title>Hệ Thống Quan Trắc Thời Tiết</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css" />
-	    <link rel="stylesheet" type="text/css" href="src/datetimepicker.min.css" />
-        <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Libre+Baskerville">
-
-        <script src="src/jquery-3.3.1.min.js"></script>
-        <script src="src/bootstrap.min.js"></script>
-        <script src="src/moment.min.js"></script>
-        <script src="src/datetimepicker.min.js"></script>
-
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
     <body>
         <div class="container">
@@ -44,7 +35,7 @@
                             </div>
                             <div class="temp-info">
                                 <p class="info-header">Nhiệt độ (Temperature)</p>
-                                <p class="info-in">25&deg;C</p>
+                                <p class="info-in" id="temperature"></p>
                             </div>
                         </div>
                         <div class="container-info">
@@ -70,7 +61,7 @@
                             </div>
                             <div class="temp-info">
                                 <p class="info-header">Độ ẩm (Humidity)</p>
-                                <p class="info-in">65%</p>
+                                <p class="info-in" id="humidity"></p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +74,7 @@
                             </div>
                             <div class="temp-info">
                                 <p class="info-header">Lượng mưa</p>
-                                <p class="info-in">5mm</p>
+                                <p class="info-in" id="rain"></p>
                             </div>
                         </div>
                         <div class="container-info">
@@ -96,13 +87,13 @@
                             </div>
                             <div class="temp-info">
                                 <p class="info-header">Tốc độ gió</p>
-                                <p class="info-in">12km/h</p>
+                                <p class="info-in" id="wind"></p>
                             </div>
                         </div>
                     </div>
             </div>
         </div>
-        <script src="index.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
 

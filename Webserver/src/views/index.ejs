@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/index.css">
+        <title>Import Film</title>
+    </head>
+    <style>
+      button{
+        height: 30px;
+        width: 70px;
+      }
+      .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+    </style>
+<body>
+  <div class="topnav">
+    <a href="/User/:Id">Home</a>
+    <a href="/Create" >Create Film</a>
+    <a href="/List">List Film</a>
+    <a href="/Sign-out">Sign-out</a>
+    <a href="/Import" class="active">Import Film</a>
+    <a href="/export">Export Film</a>
+</div>
+<div class="content">
+  <h1>Data Import</h1>
+  <form id="importForm" enctype="multipart/form-data" action="/import" method="POST">
+    <label for="file">Choose a file:</label>
+    <input type="file" id="file" name="file" accept=".xlsx">
+    <button type="submit" onclick="showAlert()">Import</button>
+  </form>
+</div>
+  <div id="message"></div>
+
+  <script>
+    function showAlert() {
+      alert('Complete Import');
+    }
+  </script>
+</body>
+</html>
