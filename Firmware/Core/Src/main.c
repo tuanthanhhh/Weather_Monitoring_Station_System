@@ -181,9 +181,10 @@ int main(void)
 			hdc1080_start_measurement(&hi2c1,(float*)&temp,(uint8_t*)&humi);
 			snprintf(TxBuffer,sizeof(TxBuffer),"Toc do gio: %.2f, Luong mua: %d\r\nNhiet do: %.2f, Do am: %d\r\n",wind_speed,23,temp,humi);
 			HAL_UART_Transmit(&huart1, (uint8_t*)TxBuffer, strlen(TxBuffer), HAL_MAX_DELAY);
-			LoRa_transmit(&myLoRa, TxBuffer, 5, 1000);
+			LoRa_transmit(&myLoRa, TxBuffer, strlen(TxBuffer), 1000);
 			printf("Toc do gio: %.2f, Luong mua: %d\n",wind_speed,23);
 			printf("Nhiet do: %.2f, Do am: %d\n",temp,humi);
+			HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 		}
 
 	//	printf("%.2f\n",wind_speed);
