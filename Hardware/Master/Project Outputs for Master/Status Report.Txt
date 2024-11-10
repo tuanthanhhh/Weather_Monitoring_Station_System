@@ -1,28 +1,12 @@
-Output: Gerber Files
-Type  : Gerber
-From  : Variant [[No Variations]] of Project [Master.PrjPcb]
-   Generated File[Master1.GTO]
-   Generated File[Master1.GTP]
-   Generated File[Master1.GTS]
-   Generated File[Master1.GTL]
-   Generated File[Master1.GBL]
-   Generated File[Master1.GBS]
-   Generated File[Master1.GBP]
-   Generated File[Master1.GBO]
-   Generated File[Master1.GM1]
-   Generated File[Master1.GM2]
-   Generated File[Master1.GM13]
-   Generated File[Master1.GKO]
-   Generated File[Master1.GPT]
-   Generated File[Master1.GPB]
-   Generated File[Master1.GD1]
-   Generated File[Master1.GG1]
-   Generated File[Master1.RUL]
-   Generated File[Master1.EXTREP]
-   Generated File[Master1.REP]
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Master.PrjPcb]
+   Generated File[Master1.TXT]
+   Generated File[Master1.LDP]
+   Generated File[Master1.DRR]
 
 
-Files Generated   : 19
+Files Generated   : 3
 Documents Printed : 0
 
-Finished Output Generation At 11:43:47 CH On 05/11/2024
+Finished Output Generation At 3:34:31 CH On 08/11/2024
