@@ -4,6 +4,38 @@
         <title>Hệ Thống Quan Trắc Thời Tiết</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <script>
+            const socket = new WebSocket('ws://localhost:10000'); // Địa chỉ WebSocket của server
+          
+            // Khi kết nối WebSocket được thiết lập
+            socket.addEventListener('open', function (event) {
+              console.log('Kết nối WebSocket đã được thiết lập');
+            });
+          
+            // Nhận dữ liệu từ server (khi dữ liệu thay đổi)
+            socket.addEventListener('message', function (event) {
+              const data = JSON.parse(event.data);
+              // Cập nhật giao diện với dữ liệu mới
+              $('#temperature').text(data.temperature);
+              $('#humidity').text(data.humidity);
+              $('#wind_speed').text(data.wind_speed);
+              $('#rainfall').text(data.rainfall);
+            });
+          
+            // Gửi yêu cầu cập nhật dữ liệu
+            function updateWeatherData() {
+              const location_id = 1;
+              const temperature = $('#temperature').val();
+              const humidity = $('#humidity').val();
+              const wind_speed = $('#wind_speed').val();
+              const rainfall = $('#rainfall').val();
+          
+              socket.send(JSON.stringify({
+                action: 'updateWeatherData',
+                data: { location_id, temperature, humidity, wind_speed, rainfall }
+              }));
+            }
+          </script>
     </head>
     <body>
         <div class="container">

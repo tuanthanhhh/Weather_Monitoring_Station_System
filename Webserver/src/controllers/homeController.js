@@ -5,6 +5,7 @@ const xlsx = require('xlsx');
 const path = require('path');
 
 
+
 const getHomepage = async (req,res)=> {
   try
   {
@@ -32,8 +33,23 @@ const getWeatherData = async (req,res)=> {
       res.render('main screen.ejs',{data: results,selectedLocation: location});
 }
 
+const saveData = async (req,res)=>{
+  const {location_id,temperature, humidity,wind_speed,rainfall} = req.body;
+  const query =  `
+  UPDATE weather_data
+  SET temperature = ?, humidity = ?, wind_speed = ?, rainfall = ?
+  WHERE location_id = ?
+`;
+console.log(query);
+
+const [results, fields] = await connection.query(query,[temperature,humidity,wind_speed,rainfall,location_id]);
+console.log(results);
+
+res.status(200).send({ message: "Dữ liệu đã được cập nhật!" });
+}
+
 
 module.exports = {
-  getWeatherData,getHomepage
+  getWeatherData,getHomepage,saveData
 }
 
