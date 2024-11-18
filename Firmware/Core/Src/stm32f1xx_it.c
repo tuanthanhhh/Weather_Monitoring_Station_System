@@ -192,7 +192,7 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 1 */
   count++;
 
-  if(count == 2000)
+  if(count == 5000)
   {
 	  check = 1;
 	  count = 0;

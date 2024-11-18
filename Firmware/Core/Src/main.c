@@ -184,7 +184,7 @@ int main(void)
 			LoRa_transmit(&myLoRa, TxBuffer, strlen(TxBuffer), 1000);
 			printf("Toc do gio: %.2f, Luong mua: %d\n",wind_speed,23);
 			printf("Nhiet do: %.2f, Do am: %d\n",temp,humi);
-			HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
+
 		}
 
 	//	printf("%.2f\n",wind_speed);
@@ -446,11 +446,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == myLoRa.DIO0_pin){
-		HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
+		//HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 	}
 	if(GPIO_Pin == Wind_Pin)
 	{
-	//	HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
+		HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 		wind_count++;
 		//printf("%d\n",wind_count);
 
