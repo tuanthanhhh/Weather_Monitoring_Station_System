@@ -1,19 +1,19 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.8.3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.8.6">
   <diagram name="Trang-1" id="w_1mqhQIYZNEhbcirQNn">
-    <mxGraphModel dx="1059" dy="559" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+    <mxGraphModel dx="1677" dy="885" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-1" value="&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;TEMPERATURE AND HUMIDITY SENSOR&lt;/b&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-1" value="&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;CẢM BIẾN NHIỆT ĐỘ&lt;/p&gt;&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;VÀ ĐỘ ẨM&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="120" y="320" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Ps7TP6_vOtJuePzotMpY-2" value="&lt;b style=&quot;font-size: 13px;&quot;&gt;MCU&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="360" y="350" width="160" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-4" value="&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;RAIN GAUGE SENSOR&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-4" value="&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;CẢM BIẾN ĐO&lt;/p&gt;&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;LƯỢNG MƯA&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="120" y="440" width="160" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-5" value="&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;WIND SENSOR&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-5" value="&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;CẢM BIẾN ĐO&lt;/p&gt;&lt;p class=&quot;Listlevel2&quot; style=&quot;text-indent: 0cm; font-size: 13px;&quot;&gt;TỐC ĐỘ GIÓ&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="120" y="560" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Ps7TP6_vOtJuePzotMpY-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.84;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=13;" parent="1" source="Ps7TP6_vOtJuePzotMpY-5" target="Ps7TP6_vOtJuePzotMpY-2" edge="1">
@@ -42,16 +42,16 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-17" value="NODE" style="swimlane;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-17" value="TRẠM ĐO VÀ TRUYỀN DỮ LIỆU (NODE)" style="swimlane;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="80" y="260" width="720" height="420" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-14" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;" parent="Ps7TP6_vOtJuePzotMpY-17" edge="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-14" value="" style="shape=flexArrow;endArrow=classic;startArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;startFill=0;" parent="Ps7TP6_vOtJuePzotMpY-17" edge="1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="439.9999999999999" y="231" as="sourcePoint" />
             <mxPoint x="560.16" y="231" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-3" value="LORA TRANSMITTER" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="Ps7TP6_vOtJuePzotMpY-17" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-3" value="TRUYỀN DỮ LIỆU&lt;div&gt;RF&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="Ps7TP6_vOtJuePzotMpY-17" vertex="1">
           <mxGeometry x="561" y="194" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Ps7TP6_vOtJuePzotMpY-18" value="&lt;b style=&quot;font-size: 13px;&quot;&gt;MCU&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
@@ -60,28 +60,28 @@
         <mxCell id="Ps7TP6_vOtJuePzotMpY-23" value="SERVER" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="1400" y="350" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-24" value="OLED" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-24" value="MÀN HÌNH&amp;nbsp;&lt;div&gt;HIỂN THỊ&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="1400" y="480" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-25" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;" parent="1" edge="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-25" value="" style="shape=flexArrow;endArrow=classic;startArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;startFill=0;" parent="1" edge="1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="1280" y="520" as="sourcePoint" />
             <mxPoint x="1400" y="520" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-26" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;" parent="1" edge="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-26" value="" style="shape=flexArrow;endArrow=classic;startArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;startFill=0;" parent="1" edge="1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="1280" y="400" as="sourcePoint" />
             <mxPoint x="1400" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-29" value="MASTER" style="swimlane;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-29" value="TRẠM THU THẬP DỮ LIỆU MASTER" style="swimlane;whiteSpace=wrap;html=1;fontSize=13;" parent="1" vertex="1">
           <mxGeometry x="840" y="260" width="710" height="420" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-19" value="LORA RECEIVER" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="Ps7TP6_vOtJuePzotMpY-29" vertex="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-19" value="NHẬN DỮ LIỆU&lt;div&gt;RF&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;" parent="Ps7TP6_vOtJuePzotMpY-29" vertex="1">
           <mxGeometry x="40" y="157" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Ps7TP6_vOtJuePzotMpY-27" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;" parent="Ps7TP6_vOtJuePzotMpY-29" edge="1">
+        <mxCell id="Ps7TP6_vOtJuePzotMpY-27" value="" style="shape=flexArrow;endArrow=classic;startArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=13;startFill=0;" parent="Ps7TP6_vOtJuePzotMpY-29" edge="1">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="160" y="200" as="sourcePoint" />
             <mxPoint x="280" y="200" as="targetPoint" />
