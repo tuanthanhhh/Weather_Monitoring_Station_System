@@ -11,10 +11,12 @@ const getHomepage = async (req,res)=> {
   {
     const location = 1
     const [results, fields] = await connection.query('SELECT temperature, humidity, wind_speed, rainfall FROM weather_data WHERE location_id = ?', [location]);
+    const [results2,fields2] = await connection.query('SELECT temperature, humidity, wind_speed, rainfall FROM predict_data WHERE location_id = ?', [location]);
          
     // Gửi dữ liệu đến HTML
     console.log(results);
-    return res.render('main screen.ejs',{data: results,selectedLocation: location})
+    console.log(results2);
+    return res.render('main_screen.ejs',{data: results,selectedLocation: location,data_predict:results2})
   } 
   catch(error)
   {
@@ -28,9 +30,10 @@ const getWeatherData = async (req,res)=> {
   console.log(location);
   // Thực hiện truy vấn cơ sở dữ liệu để lấy dữ liệu cho vị trí đã chọn
   const [results, fields] = await connection.query('SELECT temperature, humidity, wind_speed, rainfall FROM weather_data WHERE location_id = ?', [location]);
+  const [results2,fields2] = await connection.query('SELECT temperature, humidity, wind_speed, rainfall FROM predict_data WHERE location_id = ?', [location]);
 
       // Render lại trang EJS với dữ liệu mới
-      res.render('main screen.ejs',{data: results,selectedLocation: location});
+      return res.render('main_screen.ejs',{data: results,selectedLocation: location,data_predict:results2})
 }
 
 const saveData = async (req,res)=>{
