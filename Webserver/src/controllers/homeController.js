@@ -1,5 +1,6 @@
 const connection = require('../config/database');
 const {getAllFilm,getAllAccount} = require('../sevices/CRUDSevices'); 
+const { broadcast } = require('./webSocketController');
 const fs = require('fs');
 const xlsx = require('xlsx');
 const path = require('path');
@@ -47,6 +48,15 @@ console.log(query);
 
 const [results, fields] = await connection.query(query,[temperature,humidity,wind_speed,rainfall,location_id]);
 console.log(results);
+
+broadcast({
+  location_id,
+  temperature,
+  humidity,
+  wind_speed,
+  rainfall,
+  message: "Data updated",
+});
 
 res.status(200).send({ message: "Dữ liệu đã được cập nhật!" });
 }

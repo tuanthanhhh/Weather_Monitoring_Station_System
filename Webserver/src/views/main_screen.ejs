@@ -5,36 +5,24 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script>
-            const socket = new WebSocket('ws://localhost:10000'); // Địa chỉ WebSocket của server
+            const ws = new WebSocket('ws://localhost:8081'); // Thay localhost:8081 bằng địa chỉ server của bạn
           
-            // Khi kết nối WebSocket được thiết lập
-            socket.addEventListener('open', function (event) {
-              console.log('Kết nối WebSocket đã được thiết lập');
-            });
+            ws.onopen = () => {
+              console.log('WebSocket connection established');
+            };
           
-            // Nhận dữ liệu từ server (khi dữ liệu thay đổi)
-            socket.addEventListener('message', function (event) {
+            ws.onmessage = (event) => {
               const data = JSON.parse(event.data);
-              // Cập nhật giao diện với dữ liệu mới
-              $('#temperature').text(data.temperature);
-              $('#humidity').text(data.humidity);
-              $('#wind_speed').text(data.wind_speed);
-              $('#rainfall').text(data.rainfall);
-            });
+              console.log('Received from WebSocket:', data);
           
-            // Gửi yêu cầu cập nhật dữ liệu
-            function updateWeatherData() {
-              const location_id = 1;
-              const temperature = $('#temperature').val();
-              const humidity = $('#humidity').val();
-              const wind_speed = $('#wind_speed').val();
-              const rainfall = $('#rainfall').val();
-          
-              socket.send(JSON.stringify({
-                action: 'updateWeatherData',
-                data: { location_id, temperature, humidity, wind_speed, rainfall }
-              }));
-            }
+              if (data.message === "Data updated") {
+                // Ví dụ: Cập nhật dữ liệu giao diện
+                document.getElementById('temperature').innerText = data.temperature;
+                document.getElementById('humidity').innerText = data.humidity;
+                document.getElementById('wind_speed').innerText = data.wind_speed;
+                document.getElementById('rainfall').innerText = data.rainfall;
+              }
+            };
           </script>
     </head>
     <body>
@@ -140,7 +128,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Nhiệt độ</p>
-                                <p class="info_para"><%=data_predict[0].temperature%></p>
+                                <p class="info_para" id="temperature"><%=data_predict[0].temperature%></p>
                             </div>
                         </div>
                         <div class="template_1">
@@ -166,7 +154,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Độ ẩm</p>
-                                <p class="info_para"><%=data_predict[0].humidity%>%</p>
+                                <p class="info_para" id="humidity"><%=data_predict[0].humidity%>%</p>
                             </div>
                         </div>
                     </div>
@@ -179,7 +167,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Lượng mưa</p>
-                                <p class="info_para"><%=data_predict[0].rainfall%>mm</p>
+                                <p class="info_para" id="rainfall"><%=data_predict[0].rainfall%>mm</p>
                             </div>
                         </div>
                         <div class="template_1">
@@ -192,7 +180,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Tốc độ gió</p>
-                                <p class="info_para"><%=data_predict[0].wind_speed%>m/s</p>
+                                <p class="info_para" id="wind_speed"><%=data_predict[0].wind_speed%>m/s</p>
                             </div>
                         </div>
                     </div>
