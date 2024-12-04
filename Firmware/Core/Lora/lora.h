@@ -1,13 +1,10 @@
-/*
- * lora.h
- *
- *  Created on: Oct 30, 2024
- *      Author: LE TUAN THANH
- */
-
-#ifndef LORA_LORA_H_
-#define LORA_LORA_H_
-
+// -------------------------------------------------- \\
+// |                                                | \\
+// |            WRITTEN BY: Sslman Motlaq           | \\
+// |               Telegram: @S_Motlaq              | \\
+// |         E-MAIL:  pilot.motlaq@gmail.com        | \\
+// |                                                | \\
+// -------------------------------------------------- //
 
 #include "main.h"
 
@@ -135,5 +132,3 @@ void LoRa_receive_IT(LoRa* _LoRa, uint8_t* data, uint8_t length);
 int LoRa_getRSSI(LoRa* _LoRa);
 
 uint16_t LoRa_init(LoRa* _LoRa);
-
-#endif /* LORA_LORA_H_ */

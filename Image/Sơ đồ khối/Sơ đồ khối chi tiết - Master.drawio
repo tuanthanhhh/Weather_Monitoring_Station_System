@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.8.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="25.0.1">
   <diagram name="Trang-1" id="HcJw1_d0vRw97RPuCvvr">
-    <mxGraphModel dx="1437" dy="759" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+    <mxGraphModel dx="1184" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -36,26 +36,32 @@
           <mxGeometry x="-15" y="90" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5-ZOWW9k_i4QJJPhr3TA-23" value="Khối nguồn" style="swimlane;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#fd9696;" parent="1" vertex="1">
-          <mxGeometry x="630" y="360" width="410" height="200" as="geometry" />
+          <mxGeometry x="530" y="370" width="410" height="190" as="geometry" />
         </mxCell>
         <mxCell id="5-ZOWW9k_i4QJJPhr3TA-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;fontStyle=1;fontSize=14;" parent="5-ZOWW9k_i4QJJPhr3TA-23" source="5-ZOWW9k_i4QJJPhr3TA-30" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="350" y="50" as="targetPoint" />
+            <mxPoint x="376" y="50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5-ZOWW9k_i4QJJPhr3TA-30" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;RT9193-33GB&lt;/span&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;3.3V&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#fd9696;" parent="5-ZOWW9k_i4QJJPhr3TA-23" vertex="1">
-          <mxGeometry x="204" y="70" width="120" height="80" as="geometry" />
+        <mxCell id="5-ZOWW9k_i4QJJPhr3TA-30" value="Mạch hạ áp&lt;div&gt;trên module ESP&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#fd9696;" parent="5-ZOWW9k_i4QJJPhr3TA-23" vertex="1">
+          <mxGeometry x="230" y="70" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="5-ZOWW9k_i4QJJPhr3TA-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontStyle=1;fontSize=14;" parent="5-ZOWW9k_i4QJJPhr3TA-23" source="5-ZOWW9k_i4QJJPhr3TA-36" target="5-ZOWW9k_i4QJJPhr3TA-30" edge="1">
+        <mxCell id="5-ZOWW9k_i4QJJPhr3TA-34" value="3,3V" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="5-ZOWW9k_i4QJJPhr3TA-23" vertex="1">
+          <mxGeometry x="326" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="S6JceLcu6l0OuVUYz4PA-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;fontStyle=1;fontSize=14;" edge="1" source="S6JceLcu6l0OuVUYz4PA-6" parent="5-ZOWW9k_i4QJJPhr3TA-23">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="175" y="110" as="sourcePoint" />
+            <mxPoint x="176" y="50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5-ZOWW9k_i4QJJPhr3TA-34" value="3.3V" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="5-ZOWW9k_i4QJJPhr3TA-23" vertex="1">
-          <mxGeometry x="300" y="40" width="60" height="30" as="geometry" />
+        <mxCell id="S6JceLcu6l0OuVUYz4PA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="5-ZOWW9k_i4QJJPhr3TA-23" source="S6JceLcu6l0OuVUYz4PA-6" target="5-ZOWW9k_i4QJJPhr3TA-30">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5-ZOWW9k_i4QJJPhr3TA-36" value="Pin Lithium&lt;div&gt;(4.2V)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#fd9696;" parent="5-ZOWW9k_i4QJJPhr3TA-23" vertex="1">
-          <mxGeometry x="40" y="80" width="120" height="60" as="geometry" />
+        <mxCell id="S6JceLcu6l0OuVUYz4PA-6" value="Nguồn ngoài" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#fd9696;" vertex="1" parent="5-ZOWW9k_i4QJJPhr3TA-23">
+          <mxGeometry x="30" y="70" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="S6JceLcu6l0OuVUYz4PA-7" value="5V" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="5-ZOWW9k_i4QJJPhr3TA-23">
+          <mxGeometry x="126" y="40" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5-ZOWW9k_i4QJJPhr3TA-37" value="SERVER" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#ffda99;" parent="1" vertex="1">
           <mxGeometry x="820" y="200" width="120" height="80" as="geometry" />

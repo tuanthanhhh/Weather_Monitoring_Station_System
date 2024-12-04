@@ -59,16 +59,19 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define TEST_Pin GPIO_PIN_13
 #define TEST_GPIO_Port GPIOC
-#define DIO0_Pin GPIO_PIN_4
+#define DIO0_Pin GPIO_PIN_3
 #define DIO0_GPIO_Port GPIOA
-#define DIO0_EXTI_IRQn EXTI4_IRQn
+#define DIO0_EXTI_IRQn EXTI3_IRQn
+#define RST_Pin GPIO_PIN_4
+#define RST_GPIO_Port GPIOA
 #define NSS_Pin GPIO_PIN_0
 #define NSS_GPIO_Port GPIOB
-#define RST_Pin GPIO_PIN_1
-#define RST_GPIO_Port GPIOB
-#define Wind_Pin GPIO_PIN_11
-#define Wind_GPIO_Port GPIOB
-#define Wind_EXTI_IRQn EXTI15_10_IRQn
+#define WIND_SPEED_Pin GPIO_PIN_1
+#define WIND_SPEED_GPIO_Port GPIOB
+#define WIND_SPEED_EXTI_IRQn EXTI1_IRQn
+#define RAIN_Pin GPIO_PIN_2
+#define RAIN_GPIO_Port GPIOB
+#define RAIN_EXTI_IRQn EXTI2_IRQn
 
 /* USER CODE BEGIN Private defines */
 
