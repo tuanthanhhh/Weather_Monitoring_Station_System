@@ -33,6 +33,22 @@ void hdc1080_init(I2C_HandleTypeDef* hi2c_x,Temp_Reso Temperature_Resolution_x_b
 	HAL_I2C_Mem_Write(hi2c_x,HDC_1080_ADD<<1,Configuration_register_add,I2C_MEMADD_SIZE_8BIT,data_send,2,1000);
 }
 
+uint8_t hdc1080_reset(I2C_HandleTypeDef* hi2c_x)
+{
+    /* Reset the HDC1080 by setting bit 15 (RST) in the Configuration register */
+    uint16_t reset_command = 0x8000;
+    uint8_t data_send[2];
+
+    data_send[0] = (reset_command >> 8); // MSB
+    data_send[1] = (reset_command & 0x00ff); // LSB
+
+    HAL_I2C_Mem_Write(hi2c_x, HDC_1080_ADD << 1, Configuration_register_add, I2C_MEMADD_SIZE_8BIT, data_send, 2, 1000);
+
+    // Optional delay to let the sensor complete the reset process
+    HAL_Delay(15); // Datasheet suggests a short delay for initialization after reset
+
+    return 0; // Return success
+}
 
 uint8_t hdc1080_start_measurement(I2C_HandleTypeDef* hi2c_x,float* temperature, uint8_t* humidity)
 {

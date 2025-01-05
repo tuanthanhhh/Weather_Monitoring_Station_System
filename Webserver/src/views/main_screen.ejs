@@ -4,26 +4,43 @@
         <title>Hệ Thống Quan Trắc Thời Tiết</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/css/style.css">
-        <script>
-            const ws = new WebSocket('ws://localhost:8081'); // Thay localhost:8081 bằng địa chỉ server của bạn
-          
-            ws.onopen = () => {
-              console.log('WebSocket connection established');
-            };
-          
-            ws.onmessage = (event) => {
-              const data = JSON.parse(event.data);
-              console.log('Received from WebSocket:', data);
-          
-              if (data.message === "Data updated") {
-                // Ví dụ: Cập nhật dữ liệu giao diện
-                document.getElementById('temperature').innerText = data.temperature;
-                document.getElementById('humidity').innerText = data.humidity;
-                document.getElementById('wind_speed').innerText = data.wind_speed;
-                document.getElementById('rainfall').innerText = data.rainfall;
-              }
-            };
-          </script>
+<script>
+  const ws = new WebSocket('ws://localhost:10000'); // Thay localhost:8081 bằng địa chỉ server của bạn
+
+  ws.onopen = () => {
+    console.log('WebSocket connection established');
+  };
+
+  ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    console.log('Received from WebSocket:', data);
+
+      // Ví dụ: Cập nhật dữ liệu giao diện
+    if (data.temperature !== undefined) {
+        document.getElementById('temperature').innerText = data.temperature + '°C';
+    }
+    if (data.humidity !== undefined) {
+        document.getElementById('humidity').innerText = data.humidity + '%';
+    }
+    if (data.rainfall !== undefined) {
+        document.getElementById('rain').innerText = data.rainfall + 'mm';
+    }
+    if (data.wind_speed !== undefined) {
+        document.getElementById('wind').innerText = data.wind_speed + 'm/s';
+    }
+ //   document.getElementById('temperature').innerText = data.temperature;
+//    document.getElementById('humidity').innerText = data.humidity;
+//    document.getElementById('wind').innerText = data.wind_speed;
+//    document.getElementById('rain').innerText = data.rainfall;
+  };
+  socket.onerror = (error) => {
+    console.error('WebSocket error:', error);
+};
+
+socket.onclose = () => {
+    console.log('WebSocket connection closed');
+};
+</script>
     </head>
     <body>
         <div class="container">
@@ -34,9 +51,9 @@
                 <div class="location">
                     <p>Chọn khu vực</p>
                     <select name="location" name="location" id="idLocation" onchange="updateLocation(this.value)">
-                        <option value="1" <%= selectedLocation == '1' ? 'selected' : '' %>>Hà Nội</option>
+                        <option value="1" <%= selectedLocation == '1' ? 'selected' : '' %>>Hồ Chí Minh</option>
                         <option value="2" <%= selectedLocation == '2' ? 'selected' : '' %>>Đà Nẵng</option>
-                        <option value="3" <%= selectedLocation == '3' ? 'selected' : '' %>>TP. Hồ Chí Minh</option>
+                        <option value="3" <%= selectedLocation == '3' ? 'selected' : '' %>>Hà Nội</option>
                         <option value="4" <%= selectedLocation == '4' ? 'selected' : '' %>>Cần Thơ</option>
                         <option value="5" <%= selectedLocation == '5' ? 'selected' : '' %>>Hải Phòng</option>
                     </select>
@@ -111,7 +128,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Tốc độ gió</p>
-                                <p class="info_para" id="wind"><%=data[0].wind_speed %>km/s</p>
+                                <p class="info_para" id="wind"><%=data[0].wind_speed %>m/s</p>
                             </div>
                         </div>
                     </div>
@@ -128,7 +145,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Nhiệt độ</p>
-                                <p class="info_para" id="temperature"><%=data_predict[0].temperature%></p>
+                                <p class="info_para"><%=data_predict[0].temperature%></p>
                             </div>
                         </div>
                         <div class="template_1">
@@ -154,7 +171,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Độ ẩm</p>
-                                <p class="info_para" id="humidity"><%=data_predict[0].humidity%>%</p>
+                                <p class="info_para"><%=data_predict[0].humidity%>%</p>
                             </div>
                         </div>
                     </div>
@@ -167,7 +184,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Lượng mưa</p>
-                                <p class="info_para" id="rainfall"><%=data_predict[0].rainfall%>mm</p>
+                                <p class="info_para"><%=data_predict[0].rainfall%>mm</p>
                             </div>
                         </div>
                         <div class="template_1">
@@ -180,7 +197,7 @@
                             </div>
                             <div class="template_info">
                                 <p class="info_name">Tốc độ gió</p>
-                                <p class="info_para" id="wind_speed"><%=data_predict[0].wind_speed%>m/s</p>
+                                <p class="info_para"><%=data_predict[0].wind_speed%>m/s</p>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,6 @@ const server = http.createServer(app);
 const port = process.env.PORT || 8081;
 const hostname=process.env.HOST_NAME;
 const webRouter = require('./routes/web');
-const wss = new WebSocket.Server({ server });
 
 //config req.body
 app.use(express.json());

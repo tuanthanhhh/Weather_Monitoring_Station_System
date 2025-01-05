@@ -5,6 +5,11 @@ const WebSocket = require('ws');
 let wss;
 
 const initWebSocket = (server) => {
+    if(wss)
+    {
+        console.log('WebSocket server is already initialized.');
+        return;
+    }
     wss = new WebSocket.Server({ server });
 
     wss.on('connection', (ws) => {

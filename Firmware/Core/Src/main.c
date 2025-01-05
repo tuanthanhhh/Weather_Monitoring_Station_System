@@ -56,6 +56,8 @@ int			RSSI;
 
 float wind_speed = 0;
 uint32_t wind_count = 0;
+uint32_t rain_count =0;
+float rain_fall=0;
 uint32_t package =0;
 extern check;
 int __io_putchar(int ch)
@@ -134,8 +136,8 @@ int main(void)
 
 
   myLoRa.frequency             = 433;             // default = 433 MHz
-  myLoRa.spredingFactor        = SF_7;            // default = SF_7
-  myLoRa.bandWidth             = BW_125KHz;       // default = BW_125KHz
+  myLoRa.spredingFactor        = SF_11;            // default = SF_7
+  myLoRa.bandWidth             = BW_62_5KHz;       // default = BW_125KHz
   myLoRa.crcRate               = CR_4_5;          // default = CR_4_5
   myLoRa.power                 = POWER_20db;      // default = 20db
   myLoRa.overCurrentProtection = 100;             // default = 100 mA
@@ -182,18 +184,19 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		if(check == 1)
 		{
-			wind_speed = 0.48*wind_count;
+			wind_speed = 0.088*wind_count;
+			rain_fall = 0.174*rain_count;
 			check = 0;
 			wind_count = 0;
+			rain_count=0;
 			hdc1080_start_measurement(&hi2c1,(float*)&temp,(uint8_t*)&humi);
-			snprintf(TxBuffer,sizeof(TxBuffer),"package %d,Toc do gio: %.2f, Luong mua: %d\r\nNhiet do: %.2f, Do am: %d\r\n",package,wind_speed,23,temp,humi);
+			snprintf(TxBuffer,sizeof(TxBuffer),"package %d,Toc do gio: %.2f, Luong mua: %.2f\r\nNhiet do: %.2f, Do am: %d\r\n",package,wind_speed,rain_fall,temp,humi);
 			HAL_UART_Transmit(&huart1, (uint8_t*)TxBuffer, strlen(TxBuffer), HAL_MAX_DELAY);
 			package++;
 			LoRa_transmit(&myLoRa, TxBuffer, strlen(TxBuffer), 1000);
-			printf("Toc do gio: %.2f, Luong mua: %d\n",wind_speed,23);
-			printf("Nhiet do: %.2f, Do am: %d\n",temp,humi);
 
 		}
+
 
 	//	printf("%.2f\n",wind_speed);
 
@@ -438,6 +441,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 		wind_count++;
 		//printf("%d\n",wind_count);
 
+	}
+	if(GPIO_Pin == RAIN_Pin)
+	{
+		rain_count++;
 	}
 }
 
